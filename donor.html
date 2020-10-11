@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Donor page</title>
+    <style>
+      body{
+        background : pink;
+        font-style: oblique;
+        font-family: 'Times New Roman', Times, serif;
+      }
+    </style>
+</head>
+<body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script type="text/javascript">
+     
+       var app =  angular.module('MyApp', []);
+        app.controller('MyController', function ($scope, $window) {
+            $scope.donor = [
+                { Name: "John Hammond", bdgrp: "B+ve" , phone:"9845024578",dist:"Chennai"},
+                { Name: "Mudassar Khan", bdgrp: "A1+ve" , phone:"9845024578",dist:"Madurai"},
+                { Name: "Suzanne Mathews", bdgrp: "O+ve", phone:"9845024578" ,dist:"Coimbatore"},
+                { Name: "Robert Schidner", bdgrp: "A-ve", phone:"9845024578",dist:"Chennai"}
+                ];
+ 
+            $scope.Add = function () {
+                //Add the new item to the Array.
+                var donors = {};
+                donors.Name = $scope.Name;
+                donors.bdgrp = $scope.bdgrp;
+                donors.phone = $scope.phone;
+                donors.dist = $scope.dist;
+                $scope.donor.push(donors);
+ 
+                //Clear the TextBoxes.
+                $scope.Name = "";
+                $scope.bdgrp = "";
+                $scope.phone = "";
+                $scope.dist = "";
+            };
+ 
+            $scope.Remove = function (index) {
+                //Find the record using Index from Array.
+                var name = $scope.donor[index].Name;
+                if ($window.confirm("Do you want to delete: " + name)) {
+                    //Remove the item from Array using Index.
+                    $scope.donor.splice(index, 1);
+                }
+            }
+            $scope.length = '';
+ $scope.getLength = function() {
+     $scope.length = $scope.donor.length;
+	 alert("Array Length = "+$scope.length);
+ };
+ });  
+  
+    </script>
+    <div ng-app="MyApp" ng-controller="MyController">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th>Name</th>
+                <th>Blood group</th>
+                <th>Phone number</th>
+                <th>District</th>
+                <th></th>
+            </tr>
+            <tbody ng-repeat="m in donor">
+                <tr>
+                    <td>{{m.Name}}</td>
+                    <td>{{m.bdgrp}}</td>
+                    <td>{{m.phone}}</td>
+                    <td>{{m.dist}}</td>
+                    <td><input type="button" ng-click="Remove($index)" value="Remove" /></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><input type="text" ng-model="Name" /></td>
+                    <td><input type="text" ng-model="bdgrp" /></td>
+                    <td><input type="text" ng-model="phone" /></td>
+                    <td><input type="text" ng-model="dist" /></td>
+                    <td><input type="button" ng-click="Add()" value="Add" /></td>
+                </tr>
+            </tfoot>
+        </table>
+    
+
+        <h3>Search your donors!</h3>
+        Filter using Blood group: <input type="text" ng-model="fUserName" />
+        District : <input type="text" ng-model="fPIN" />
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Blood group</th>
+                <th>Phone</th>
+                <th>District</th>
+            </tr>
+            <tr ng-repeat="m in donor | filter: { bdgrp: fUserName, dist : fPIN }">
+                <td>{{m.bdgrp}}</td>
+                <td ng-bind="m.Name"></td>
+                <td ng-bind="m.phone"></td>
+                <td>{{m.dist}}</td>
+            </tr>
+        </table>
+  
+          <br>
+          <button ng-click="getLength()">Click To Get the number of donors</button>
+           <p>Length = {{length}}</p>
+         
+      <br>
+    </div> 
+</body>
+</html>
+

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<title>Online blood bank management</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src= 
+    "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"> 
+        </script> 
+        <script> 
+            var application = angular.module('myApp', []); 
+      
+            application.factory('random', function() { 
+                var randomObject = {}; 
+                var number = Math.floor(Math.random() * 100); 
+                randomObject.generate = function() { 
+                    return number; 
+                }; 
+                return randomObject; 
+            }); 
+            
+            application.controller('thisapp', function($scope, random) { 
+                $scope.generateRandom = function() { 
+                    $scope.randomNumber = random.generate(); 
+                }; 
+            }); 
+        </script> </head>
+<body>
+
+<!-- Side Navigation -->
+<nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+  <h1 class="w3-xxxlarge w3-text-theme">Blood bank </h1>
+  <button class="w3-bar-item w3-button" onclick="w3_close()">Close <i class="fa fa-remove"></i></button>
+  <a href="#myHeader" class="w3-bar-item w3-button">About Us</a>
+  <a href="#news" class="w3-bar-item w3-button">News and events</a>
+  <a href="#bloodbanks" class="w3-bar-item w3-button">Blood banks</a>
+  <a href="#contact" class="w3-bar-item w3-button">Contact Us</a>
+</nav>
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h2>TAMIL NADU BLOOD BANK MANAGEMENT</h2>
+  <img class="mySlides w3-animate-opacity" src="logo1.png" >
+  <h3 class="w3-xxxlarge w3-animate-bottom">BUILT FOR WEB TECHNOLOGIES BY PRASITHA S (18IT060)</h3>
+  </div>
+</header>
+
+<h2><a href="donor.html"><center>Click here to join the list of donors!</center></a></h2>
+
+<br>
+<div ng-app="myApp" ng-controller="thisapp"> 
+    <button ng-click="generateRandom()"> 
+      Generate Random Number 
+  </button> 
+    <br>{{randomNumber}} 
+</div> 
+
+<div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Chief Minister's Message</h3><br>
+  <img class="mySlides w3-animate-opacity" src="1.jpg" >
+  <p>The Goal of blood safety programme is to provide adequate safe blood and blood products to all the needy patients</p>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Stock Management</h3><br>
+  <img class="mySlides w3-animate-opacity" src="2.jpg" >
+  <p>The Blood banks can update their Blood stock on daily basis and view the upto date stock status online</p>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Blood Donation Facts</h3><br>
+  <img class="mySlides w3-animate-opacity" src="3.jpg" >
+  <p>Donated Blood can save upto 4 lives. Register today as a Blood Donor. You don't have to be a doctor to save lives</p>
+  </div>
+</div>
+</div>
+
+<div class="w3-container w3-center" id="news">
+  <hr>
+  <h3>News and events</h3>
+</div>
+
+<div class="w3-row-padding"> 
+
+<div class="w3-third">
+<div class="w3-card">
+  <img src="event1.jpg" alt="Car" style="width:100%">
+  <div class="w3-container">
+  <p>State level Orientation Training for DBT Officers/BB Medical Officers</p>
+  </div>
+</div>
+</div>
+
+<div class="w3-third">
+<div class="w3-card-4">
+  <img src="event2.jpg" alt="Car" style="width:100%">
+  <div class="w3-container">
+  <p>Blood banks</p>
+  </div>
+</div>
+</div>
+
+<div class="w3-third">
+<div class="w3-card-4">
+  <img src="event3.JPG" alt="Car" style="width:100%">
+  <div class="w3-container">
+  <p>Blood donation camps</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="w3-container" id="bloodbanks">
+  <hr>
+  <div class="w3-center">
+    <h2>Blood banks</h2>
+    <p w3-class="w3-large">Click to know the blood bank details</p>
+  </div>
+<div class="w3-responsive w3-card-4">
+<table class="w3-table w3-striped w3-bordered">
+<thead>
+<tr class="w3-theme">
+  <th>S.No</th>
+  <th>District</th>
+  <th>Institution Name</th>
+  <th>Landline</th>
+  <th>Email</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td>Ariyalur</td>
+  <td>Government Head Quarters Hospital, Ariyalur</td>
+  <td>04329 - 224050</td>
+  <td>bloodbankariyalur@gmail.com</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td>Ariyalur</td>
+    <td>Government Head Quarters Hospital, Ariyalur</td>
+    <td>04329 - 224050</td>
+    <td>bloodbankariyalur@gmail.com</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td>Chennai</td>
+    <td>Government Kilpauk Medical College Hospital</td>
+    <td>04329 - 224050</td>
+    <td>kmchbloodbank@gmail.com</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td>Ariyalur</td>
+    <td>Government Head Quarters Hospital, Ariyalur</td>
+    <td>04329 - 224050</td>
+    <td>bloodbankariyalur@gmail.com</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<hr>
+<h2 class="w3-center" id="contact">Contact Us</h2>
+</div>
+
+<div class="w3-row-padding">
+
+<div class="w3-half">
+<form class="w3-container w3-card-4">
+  <h2>Contact Form</h2>
+  <div class="w3-section">      
+    <input class="w3-input" type="text" required>
+    <label>Name</label>
+  </div>
+  <div class="w3-section">      
+    <input class="w3-input" type="text" required>
+    <label>Email</label>
+  </div>
+  <div class="w3-section">      
+    <input class="w3-input" type="text" required>
+    <label>Subject</label>
+  </div>
+  <div class="w3-section">      
+    <input class="w3-input" type="text" required>
+    <label>Comments</label>
+   </div>
+</form>
+</div>
+<div class="w3-half">
+    <div class="w3-card-4 w3-container">
+    <h2>GET IN TOUCH</h2>
+    <h4>TAMILNADU STATE AIDS CONTROL SOCIETY &
+        TAMILNADU STATE BLOOD TRANSFUSION COUNCIL,</h4>
+    <p>417, Pantheon Road,Egmore</p>
+    <p>Chennai-600 008,Tamilnadu, India</p>
+    <p>Phone: +91-44-28190261 / 28194917</p>
+    <p>Board No: +91-44-28190467 / 28190891</p>   
+    <p>E-mail: bloodsafetytansacs@gmail.com</p>
+    </div>
+</div>
+<hr>
+</div>
+
+<h2 class="w3-center">Slideshows</h2>
+<div class="w3-content" style="max-width:800px;position:relative">
+
+<img class="mySlides w3-animate-opacity" src="BANNER1.jpg" style="width:100%">
+<img class="mySlides w3-animate-opacity" src="BANNER2.jpg" style="width:100%">
+<img class="mySlides w3-animate-opacity" src="BANNER3.jpg" style="width:100%">
+<img class="mySlides w3-animate-opacity" src="BANNER4.jpg" style="width:100%">
+
+<a class="w3-button w3-hover-dark-grey" style="position:absolute;top:45%;left:0;" onclick="plusDivs(-1)">❮</a>
+<a class="w3-button w3-hover-dark-grey" style="position:absolute;top:45%;right:0;" onclick="plusDivs(+1)">❯</a>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+    <p>Some one saved my life, was it you?</p>
+    <h2>DONATE BLOOD SAVE MORE LIVES</h2>
+    <b>REACH US</b>
+    <p>Address: 417, Pantheon Road,Egmore
+      Chennai-600 008,Tamilnadu, India</p>
+    <b>CONTACT US</b>
+    <p>Phone: +91 - 44 - 28190261 / 28194917</p>
+    <p>Board No: +91-44-28190467 / 28190891</p>
+       Email: bloodsafetytansacs@gmail.com</p>
+    <center><img class="mySlides w3-animate-opacity" src="logo_footer.png" ></center>
+</footer>
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "100%";
+  x.style.fontSize = "40px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Tabs
+function openCity(evt, cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-dark-grey";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+// Accordions
+function myAccFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Slideshows
+var slideIndex = 1;
+
+function plusDivs(n) {
+  slideIndex = slideIndex + n;
+  showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+showDivs(1);
+
+// Progress Bars
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
